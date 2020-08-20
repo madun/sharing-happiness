@@ -5,9 +5,40 @@ import { SearchOutlined, Whatshot } from "@material-ui/icons";
 import moment from "moment";
 import BaseLayout from "../../components/layouts/BaseLayout";
 import Card from "../../components/molecules/Card";
+import { useState } from "react";
 moment.locale("id");
 
 export default function index() {
+  const [data, setData] = useState([
+    {
+      id: 35,
+      image:
+        "https://images.unsplash.com/photo-1588779481061-1706804c9556?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800",
+      category: "ART",
+      title: "Bangkitnya para pahlawan negeri",
+      avatar: "https://randomuser.me/api/portraits/men/63.jpg",
+      username: "Kevin Mitnich",
+    },
+    {
+      id: 35,
+      image:
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      category: "MUSIC",
+      title: "Music Indonesia melegenda di luar Negeri",
+      avatar: "https://randomuser.me/api/portraits/women/11.jpg",
+      username: "MadunSki",
+    },
+    {
+      id: 35,
+      image:
+        "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800",
+      category: "WORLD",
+      title: "Berita Dunia dalam amukan masa",
+      avatar: "https://randomuser.me/api/portraits/women/74.jpg",
+      username: "Gwen Station",
+    },
+  ]);
+
   return (
     <BaseLayout>
       <Head>
@@ -89,46 +120,6 @@ export default function index() {
           </p>
         </div>
         <div className="mb-5">
-          {/* <a
-            href="#"
-            className="block rounded-lg relative transform transition-all duration-300 scale-100 hover:scale-95"
-            style={{
-              background:
-                "url(https://sharinghappiness.imgix.net/files/programgalleries/f679c878dbd0dcf6d77a58bd6ba0e84f-20190513071715.jpg)",
-              backgroundPosition: "left",
-              backgroundSize: "cover",
-            }}
-          >
-            <div className="absolute top-0 right-0 -mt-3 mr-3">
-              <div className="rounded-full bg-teal-400 text-white text-xs py-1 pl-2 pr-3 leading-none">
-                <Whatshot style={{ height: 16, width: 16, marginRight: 4 }} />
-                <span className="align-middle">FRESH</span>
-              </div>
-            </div>
-            <div className="h-48"></div>
-            <div className="p-5">
-              <h2 className="text-white text-2xl font-bold leading-tight mb-3 pr-5">
-                Bangun Teras Tahfizh Untuk Pemuda Penghapal Qur'an
-              </h2>
-              <div className="flex w-full items-center text-sm text-gray-300 font-medium">
-                <div className="flex-1 flex items-center">
-                  <div
-                    className="rounded-full w-8 h-8 mr-3"
-                    style={{
-                      background:
-                        "url(https://randomuser.me/api/portraits/women/74.jpg)",
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  ></div>
-                  <div>Gwen Thomson</div>
-                </div>
-                <div>
-                  <i className="mdi mdi-thumb-up"></i> 18
-                </div>
-              </div>
-            </div>
-          </a> */}
           <Link href="">
             <Card
               size="lg"
@@ -141,38 +132,16 @@ export default function index() {
           </Link>
         </div>
         <div className="mb-5">
-          <a
-            href="#"
-            className="block rounded-lg relative p-5 transform transition-all duration-300 scale-100 hover:scale-95"
-            style={{
-              background:
-                "url(https://images.unsplash.com/photo-1593113616828-6f22bca04804?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800)",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-            }}
-          >
-            <div className="h-48"></div>
-            <h2 className="text-white text-2xl font-bold leading-tight mb-3 pr-5">
-              Top 5 Cocktail Bars in&nbsp;NYC
-            </h2>
-            <div className="flex w-full items-center text-sm text-gray-300 font-medium">
-              <div className="flex-1 flex items-center">
-                <div
-                  className="rounded-full w-8 h-8 mr-3"
-                  style={{
-                    background:
-                      "url(https://randomuser.me/api/portraits/women/55.jpg)",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                  }}
-                ></div>
-                <div>Kayden Buckley</div>
-              </div>
-              <div>
-                <i className="mdi mdi-thumb-up"></i> 7
-              </div>
-            </div>
-          </a>
+          <Link href="">
+            <Card
+              size="lg"
+              background="https://images.unsplash.com/photo-1593113616828-6f22bca04804?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800"
+              title="Top 5 Cocktail Bars in&nbsp;NYC"
+              avatar="https://randomuser.me/api/portraits/women/55.jpg"
+              avatarname="Kayden Buckley"
+              //   countliked={"7K"}
+            />
+          </Link>
         </div>
         <div className="mb-3">
           <h1 className="text-3xl font-bold">Yesterday</h1>
@@ -249,153 +218,47 @@ export default function index() {
         <div className="mb-3">
           <h1 className="text-3xl font-bold">Previous</h1>
         </div>
-        <div>
-          <a
-            href="#"
-            className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95"
-          >
-            <div
-              className="block h-24 w-2/5 rounded overflow-hidden"
-              style={{
-                background:
-                  "url(https://images.unsplash.com/photo-1591522810850-58128c5fb089?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800)",
-                backgroundPosition: "center",
-                backgroundSize: "center",
-              }}
-            ></div>
-            <div className="pl-3 w-3/5">
-              <p className="text-xs text-gray-500 uppercase font-semibold">
-                SPORTS
-              </p>
-              <h3 className="text-md font-semibold leading-tight mb-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit
-              </h3>
-              <div className="flex w-full items-center text-xs text-gray-500 font-medium">
-                <div
-                  className="rounded-full w-5 h-5 mr-3"
-                  style={{
-                    background:
-                      "url(https://randomuser.me/api/portraits/men/41.jpg)",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                  }}
-                ></div>
-                <div>Jack Ryan</div>
+        {data.map((item, key) => {
+          return (
+            <>
+              <div key={item.id}>
+                <a
+                  href="#"
+                  className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95"
+                >
+                  <div
+                    className="block h-24 w-2/5 rounded overflow-hidden"
+                    style={{
+                      background: `url(${item.image})`,
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                    }}
+                  ></div>
+                  <div className="pl-3 w-3/5">
+                    <p className="text-xs text-gray-500 uppercase font-semibold">
+                      {item.category}
+                    </p>
+                    <h3 className="text-md font-semibold leading-tight mb-3">
+                      {item.title}
+                    </h3>
+                    <div className="flex w-full items-center text-xs text-gray-500 font-medium">
+                      <div
+                        className="rounded-full w-5 h-5 mr-3"
+                        style={{
+                          background: `url(${item.avatar})`,
+                          backgroundPosition: "center",
+                          backgroundSize: "cover",
+                        }}
+                      ></div>
+                      <div>{item.username}</div>
+                    </div>
+                  </div>
+                </a>
               </div>
-            </div>
-          </a>
-        </div>
-        <hr className="border-gray-200 my-3" />
-        <div>
-          <a
-            href="#"
-            className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95"
-          >
-            <div
-              className="block h-24 w-2/5 rounded overflow-hidden"
-              style={{
-                background:
-                  "url(https://images.unsplash.com/photo-1588779481061-1706804c9556?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800)",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-              }}
-            ></div>
-            <div className="pl-3 w-3/5">
-              <p className="text-xs text-gray-500 uppercase font-semibold">
-                ART
-              </p>
-              <h3 className="text-md font-semibold leading-tight mb-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit
-              </h3>
-              <div className="flex w-full items-center text-xs text-gray-500 font-medium">
-                <div
-                  className="rounded-full w-5 h-5 mr-3"
-                  style={{
-                    background:
-                      "url(https://randomuser.me/api/portraits/men/63.jpg)",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                  }}
-                ></div>
-                <div>Kevin Jackson</div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <hr className="border-gray-200 my-3" />
-        <div>
-          <a
-            href="#"
-            className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95"
-          >
-            <div
-              className="block h-24 w-2/5 rounded overflow-hidden"
-              style={{
-                background:
-                  "url(https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-              }}
-            ></div>
-            <div className="pl-3 w-3/5">
-              <p className="text-xs text-gray-500 uppercase font-semibold">
-                MUSIC
-              </p>
-              <h3 className="text-md font-semibold leading-tight mb-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit
-              </h3>
-              <div className="flex w-full items-center text-xs text-gray-500 font-medium">
-                <div
-                  className="rounded-full w-5 h-5 mr-3"
-                  style={{
-                    background:
-                      "url(https://randomuser.me/api/portraits/women/11.jpg)",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                  }}
-                ></div>
-                <div>Rowena Wheeler</div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <hr className="border-gray-200 my-3" />
-        <div>
-          <a
-            href="#"
-            className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95"
-          >
-            <div
-              className="block h-24 w-2/5 rounded overflow-hidden"
-              style={{
-                background:
-                  "url(https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800)",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-              }}
-            ></div>
-            <div className="pl-3 w-3/5">
-              <p className="text-xs text-gray-500 uppercase font-semibold">
-                WORLD
-              </p>
-              <h3 className="text-md font-semibold leading-tight mb-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit
-              </h3>
-              <div className="flex w-full items-center text-xs text-gray-500 font-medium">
-                <div
-                  className="rounded-full w-5 h-5 mr-3"
-                  style={{
-                    background:
-                      "url(https://randomuser.me/api/portraits/women/74.jpg)",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                  }}
-                ></div>
-                <div>Gwen Thomson</div>
-              </div>
-            </div>
-          </a>
-        </div>
+              <hr className="border-gray-200 my-3" />
+            </>
+          );
+        })}
       </div>
     </BaseLayout>
   );
