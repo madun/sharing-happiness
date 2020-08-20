@@ -5,3 +5,12 @@
 body {
   /* @apply bg-blue-500 p-12; */
 }
+
+.description > p {
+  @apply text-justify mb-5;
+}
+
+.description > p > img {
+  /* width: 100% !important; */
+  @apply rounded-lg w-full;
+}

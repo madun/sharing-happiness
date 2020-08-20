@@ -9,6 +9,8 @@ import {
   SearchOutlined,
   Whatshot,
   ThumbUp,
+  ArrowBackIos,
+  Share,
 } from "@material-ui/icons";
 
 function HomeIcon() {
@@ -35,6 +37,12 @@ function FireIcon() {
 function ThumbUpIcon(props) {
   return <ThumbUp {...props} />;
 }
+function ArrowBackIcon(props) {
+  return <ArrowBackIos {...props} />;
+}
+function ShareIcon(props) {
+  return <Share {...props} />;
+}
 
 export {
   HomeIcon,
@@ -45,4 +53,6 @@ export {
   SearchIcon,
   FireIcon,
   ThumbUpIcon,
+  ArrowBackIcon,
+  ShareIcon,
 };

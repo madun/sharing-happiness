@@ -11,7 +11,7 @@ moment.locale("id");
 export default function index() {
   const [data, setData] = useState([
     {
-      id: 35,
+      id: 34,
       image:
         "https://images.unsplash.com/photo-1588779481061-1706804c9556?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800",
       category: "ART",
@@ -29,7 +29,7 @@ export default function index() {
       username: "MadunSki",
     },
     {
-      id: 35,
+      id: 36,
       image:
         "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800",
       category: "WORLD",
@@ -120,27 +120,31 @@ export default function index() {
           </p>
         </div>
         <div className="mb-5">
-          <Link href="">
-            <Card
-              size="lg"
-              background="https://sharinghappiness.imgix.net/files/programgalleries/f679c878dbd0dcf6d77a58bd6ba0e84f-20190513071715.jpg"
-              title="Bangun Teras Tahfizh Untuk Pemuda Penghapal Qur'an"
-              avatar="https://randomuser.me/api/portraits/women/74.jpg"
-              avatarname="Ilman manarul qori"
-              //   countliked={"7K"}
-            />
+          <Link href="/[slug]" as={`/${"slug-campaign-1"}`}>
+            <a>
+              <Card
+                size="lg"
+                background="https://sharinghappiness.imgix.net/files/programgalleries/f679c878dbd0dcf6d77a58bd6ba0e84f-20190513071715.jpg"
+                title="Bangun Teras Tahfizh Untuk Pemuda Penghapal Qur'an"
+                avatar="https://randomuser.me/api/portraits/women/74.jpg"
+                avatarname="Ilman manarul qori"
+                //   countliked={"7K"}
+              />
+            </a>
           </Link>
         </div>
         <div className="mb-5">
-          <Link href="">
-            <Card
-              size="lg"
-              background="https://images.unsplash.com/photo-1593113616828-6f22bca04804?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800"
-              title="Top 5 Cocktail Bars in&nbsp;NYC"
-              avatar="https://randomuser.me/api/portraits/women/55.jpg"
-              avatarname="Kayden Buckley"
-              //   countliked={"7K"}
-            />
+          <Link href="/[slug]" as={`/${"slug-campaign-2"}`}>
+            <a>
+              <Card
+                size="lg"
+                background="https://images.unsplash.com/photo-1593113616828-6f22bca04804?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800"
+                title="Top 5 Cocktail Bars in&nbsp;NYC"
+                avatar="https://randomuser.me/api/portraits/women/55.jpg"
+                avatarname="Kayden Buckley"
+                //   countliked={"7K"}
+              />
+            </a>
           </Link>
         </div>
         <div className="mb-3">
@@ -220,43 +224,42 @@ export default function index() {
         </div>
         {data.map((item, key) => {
           return (
-            <>
-              <div key={item.id}>
-                <a
-                  href="#"
-                  className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95"
-                >
-                  <div
-                    className="block h-24 w-2/5 rounded overflow-hidden"
-                    style={{
-                      background: `url(${item.image})`,
-                      backgroundPosition: "center",
-                      backgroundSize: "cover",
-                    }}
-                  ></div>
-                  <div className="pl-3 w-3/5">
-                    <p className="text-xs text-gray-500 uppercase font-semibold">
-                      {item.category}
-                    </p>
-                    <h3 className="text-md font-semibold leading-tight mb-3">
-                      {item.title}
-                    </h3>
-                    <div className="flex w-full items-center text-xs text-gray-500 font-medium">
-                      <div
-                        className="rounded-full w-5 h-5 mr-3"
-                        style={{
-                          background: `url(${item.avatar})`,
-                          backgroundPosition: "center",
-                          backgroundSize: "cover",
-                        }}
-                      ></div>
-                      <div>{item.username}</div>
-                    </div>
+            <div key={item.id}>
+              <a
+                href="#"
+                className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95"
+              >
+                <div
+                  className="block h-24 w-2/5 rounded overflow-hidden"
+                  style={{
+                    background: `url(${item.image})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                  }}
+                ></div>
+                <div className="pl-3 w-3/5">
+                  <p className="text-xs text-gray-500 uppercase font-semibold">
+                    {item.category}
+                  </p>
+                  <h3 className="text-md font-semibold leading-tight mb-3">
+                    {item.title}
+                  </h3>
+                  <div className="flex w-full items-center text-xs text-gray-500 font-medium">
+                    <div
+                      className="rounded-full w-5 h-5 mr-3"
+                      style={{
+                        background: `url(${item.avatar})`,
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
+                      }}
+                    ></div>
+                    <div>{item.username}</div>
                   </div>
-                </a>
-              </div>
+                </div>
+              </a>
+
               <hr className="border-gray-200 my-3" />
-            </>
+            </div>
           );
         })}
       </div>
