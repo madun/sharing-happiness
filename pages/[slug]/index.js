@@ -5,12 +5,14 @@ import dumy from "../../data-dumy.json";
 import decode from "decode-html";
 import Card from "../../components/molecules/Card";
 import { useState } from "react";
+import Meta from "../../components/Meta";
 
-export default function index() {
+export default function DetailCampaign() {
   const router = useRouter();
   const [showMore, setShowMore] = useState(false);
   return (
     <StackLayout title={dumy.title}>
+      <Meta title={`${dumy.title}`} description={`${dumy.highlight}`} />
       {/* <div>detail {router.query.slug}</div> */}
       <div className={showMore ? "" : "h-64 overflow-hidden"}>
         <div className="description">
@@ -22,6 +24,7 @@ export default function index() {
             avatarname={dumy.user.name}
           />
           {renderHTML(decode(dumy.description))}
+          {/* <p dangerouslySetInnerHTML={{ _html: decode(dumy.description) }} /> */}
         </div>
       </div>
       <div onClick={() => setShowMore(!showMore)} className="text-center mt-4">

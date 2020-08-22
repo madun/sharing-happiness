@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import { SearchOutlined, Whatshot } from "@material-ui/icons";
 
@@ -6,6 +5,7 @@ import moment from "moment";
 import BaseLayout from "../../components/layouts/BaseLayout";
 import Card from "../../components/molecules/Card";
 import { useState } from "react";
+import Meta from "../../components/Meta";
 moment.locale("id");
 
 export default function index() {
@@ -41,10 +41,12 @@ export default function index() {
 
   return (
     <BaseLayout>
-      <Head>
-        <title>Home Page</title>
-        <meta property="og:title" content="Home Page" key="title" />
-      </Head>
+      <Meta
+        title="SharingHappiness.org | Social Fundraising Platform"
+        description="Platform penggalangan dana untuk program dan inisiatif sosial dengan lebih mudah"
+        url="https://sharinghappiness.org"
+      />
+
       <div className="bg-white h-full w-full px-5 pt-6 pb-20 overflow-y-auto">
         <div className="flex mb-4">
           <a className="block w-1/4 lg:mr-4" href="/">
