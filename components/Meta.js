@@ -1,11 +1,17 @@
 import React from "react";
 import Head from "next/head";
+import getConfig from "next/config";
 
 export default function Meta({ title, description, url }) {
+  const { publicRuntimeConfig } = getConfig();
+
   return (
     <Head>
-      <title>{title ? title : "Sharing Happiness"}</title>
-      <meta name="title" content={title ? title : "Sharing Happiness"} />
+      <title>{title ? title : publicRuntimeConfig.COMPANY_NAME}</title>
+      <meta
+        name="title"
+        content={title ? title : publicRuntimeConfig.COMPANY_NAME}
+      />
       <meta
         name="description"
         content={
@@ -20,8 +26,14 @@ export default function Meta({ title, description, url }) {
       />
       <meta property="og:url" content={url ? url : "sharinghappiness.org"} />
       <meta property="og:type" content="article" />
-      <meta property="og:site_name" content="Sharing Happiness" />
-      <meta property="og:title" content={title ? title : "Sharing Happiness"} />
+      <meta
+        property="og:site_name"
+        content={publicRuntimeConfig.COMPANY_NAME}
+      />
+      <meta
+        property="og:title"
+        content={title ? title : publicRuntimeConfig.COMPANY_NAME}
+      />
       <link
         rel="apple-touch-icon"
         href="https://sharinghappiness.org/assets/img/apple-icon.png"
@@ -58,7 +70,7 @@ export default function Meta({ title, description, url }) {
       />
       <meta
         name="twitter:title"
-        content={title ? title : "Sharing Happiness"}
+        content={title ? title : publicRuntimeConfig.COMPANY_NAME}
       />
       <meta
         name="twitter:image"
