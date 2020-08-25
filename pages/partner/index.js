@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import BaseLayout from "../../components/layouts/BaseLayout";
 import Head from "next/head";
+import Meta from "../../components/Meta";
 
 export default function index() {
   return (
