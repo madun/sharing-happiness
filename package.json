@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "dev-host": "next dev --hostname=0.0.0.0"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",

@@ -7,7 +7,7 @@ export default function Navbar() {
   const router = useRouter();
 
   return (
-    <div className="bg-white absolute bottom-0 w-full border-t border-gray-200 flex justify-around">
+    <div className="bg-white fixed bottom-0 w-full border-t border-gray-200 flex justify-around max-w-md">
       <Link as="/" href="/">
         <a>
           <ItemNav

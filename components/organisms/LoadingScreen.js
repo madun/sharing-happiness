@@ -5,7 +5,7 @@ import plane from "../../assets/lottie/plane-loop.json";
 
 export default function LoadingScreen(props) {
   return (
-    <div className="flex items-center h-screen flex-1 justify-center">
+    <div className="flex w-full items-center h-screen flex-1 justify-center max-w-md">
       <style jsx>
         {`
           .loading {

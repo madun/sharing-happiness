@@ -42,6 +42,7 @@ export default function BaseLayout(props) {
   return (
     <div className="flex-1 h-full">
       {loading && <LoadingScreen loading={loading} />}
+      {/* <LoadingScreen loading={true} /> */}
       {!loading && props.children}
       <Navbar />
     </div>
