@@ -175,42 +175,39 @@ export default function index() {
         </div>
         {data.map((item, key) => {
           return (
-            <div key={item.id}>
-              <a
-                href="#"
-                className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95"
-              >
-                <div
-                  className="block h-24 w-2/5 rounded overflow-hidden"
-                  style={{
-                    background: `url(${item.image})`,
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                  }}
-                ></div>
-                <div className="pl-3 w-3/5">
-                  <p className="text-xs text-gray-500 uppercase font-semibold">
-                    {item.category}
-                  </p>
-                  <h3 className="text-md font-semibold leading-tight mb-3">
-                    {item.title}
-                  </h3>
-                  <div className="flex w-full items-center text-xs text-gray-500 font-medium">
-                    <div
-                      className="rounded-full w-5 h-5 mr-3"
-                      style={{
-                        background: `url(${item.avatar})`,
-                        backgroundPosition: "center",
-                        backgroundSize: "cover",
-                      }}
-                    ></div>
-                    <div>{item.username}</div>
-                  </div>
+            <a
+              href="#"
+              key={item.id}
+              className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95 border-b last:border-b-0 last:pb-0 pb-4 first:pt-0 pt-4"
+            >
+              <div
+                className="block h-24 w-2/5 rounded overflow-hidden"
+                style={{
+                  background: `url(${item.image})`,
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+              ></div>
+              <div className="pl-3 w-3/5">
+                <p className="text-xs text-gray-500 uppercase font-semibold">
+                  {item.category}
+                </p>
+                <h3 className="text-md font-semibold leading-tight mb-3">
+                  {item.title}
+                </h3>
+                <div className="flex w-full items-center text-xs text-gray-500 font-medium">
+                  <div
+                    className="rounded-full w-5 h-5 mr-3"
+                    style={{
+                      background: `url(${item.avatar})`,
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                    }}
+                  ></div>
+                  <div>{item.username}</div>
                 </div>
-              </a>
-
-              <hr className="border-gray-200 my-3" />
-            </div>
+              </div>
+            </a>
           );
         })}
       </div>
