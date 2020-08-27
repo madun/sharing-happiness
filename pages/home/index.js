@@ -79,7 +79,7 @@ export default function index() {
                 title="Bangun Teras Tahfizh Untuk Pemuda Penghapal Qur'an"
                 avatar="https://randomuser.me/api/portraits/women/74.jpg"
                 avatarname="Ilman manarul qori"
-                //   countliked={"7K"}
+                funded={"7K"}
               />
             </a>
           </Link>

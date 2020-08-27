@@ -18,7 +18,8 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-render-html": "^0.6.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@material-ui/icons": "^4.9.1",
