@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import categoryList from "../category-list.json";
-import { CheckIcon } from "../components/atoms/Icons";
-import Tag from "../components/molecules/Tag";
+import { Tag } from "../components/molecules";
 
 export default function InterestedTag({ setItem }) {
   const updatedCategory = categoryList.map((obj) => ({ ...obj, check: false }));

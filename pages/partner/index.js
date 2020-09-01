@@ -3,7 +3,7 @@ import BaseLayout from "../../components/layouts/BaseLayout";
 import Head from "next/head";
 import Meta from "../../components/Meta";
 import Link from "next/link";
-import Card from "../../components/molecules/Card";
+import { Card } from "../../components/molecules";
 
 export default function index() {
   return (

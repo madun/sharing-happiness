@@ -3,7 +3,7 @@ import { SearchOutlined, Whatshot } from "@material-ui/icons";
 
 import moment from "moment";
 import BaseLayout from "../../components/layouts/BaseLayout";
-import Card from "../../components/molecules/Card";
+import { Card } from "../../components/molecules";
 import { useState } from "react";
 import Meta from "../../components/Meta";
 moment.locale("id");
