@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import categoryList from "../category-list.json";
 import { Tag } from "../components/molecules";
+import sdgs from "../sdgs.json";
 
 export default function InterestedTag({ setItem }) {
+  const updatedCategorySdg = sdgs.map((item) => ({ ...item, check: false }));
   const updatedCategory = categoryList.map((obj) => ({ ...obj, check: false }));
+  const [dataSdgs, setSdg] = useState(updatedCategorySdg);
   const [categories, setCategory] = useState(updatedCategory);
+  const [sdgChecked, setSdgChecked] = useState(false);
 
   function setActiveCategory(item) {
     const filtered = categories.map((category) =>
@@ -15,12 +19,25 @@ export default function InterestedTag({ setItem }) {
     setCategory(filtered);
   }
 
-  function saveCategories() {
-    const checked = categories.filter((category) => category.check === true);
+  function setActiveCategorySdg(item) {
+    const filtered = dataSdgs.map((sdgItem) =>
+      sdgItem.id === item.id ? { ...sdgItem, check: !sdgItem.check } : sdgItem
+    );
+    setSdg(filtered);
+  }
 
-    // console.log("checked", checked);
+  function saveCategories() {
+    const checkedCategory = categories.filter(
+      (category) => category.check === true
+    );
+    const categoriesSdgs = dataSdgs.filter((sdgItem) => sdgItem.check === true);
     // localStorage.setItem("interested", JSON.stringify(checked));
-    setItem(checked);
+    setItem(sdgChecked ? categoriesSdgs : checkedCategory);
+  }
+
+  function appendSdgChilds() {
+    setSdg(sdgs); // set dafault
+    setSdgChecked(!sdgChecked);
   }
 
   return (
@@ -35,20 +52,45 @@ export default function InterestedTag({ setItem }) {
           Dive deeper on categories that matter to you.
         </div>
         <div className="font-medium text-center mt-2">
-          Select what you're into. We'll help you find great things to read.
+          Select what you're into. We'll help you find great things to make
+          Impact!.
         </div>
       </div>
       <div className="flex-4 overflow-y-auto mt-4">
         <div className="flex w-full flex-wrap">
+          <Tag
+            active={sdgChecked}
+            data={{ title: "SDGs" }}
+            image="/sdg.png"
+            onClick={() => appendSdgChilds()}
+          />
+
+          {dataSdgs.map((item, key) => {
+            if (sdgChecked) {
+              return (
+                <Tag
+                  key={key}
+                  active={item.check ? true : false}
+                  onClick={(data) => setActiveCategorySdg(data)}
+                  data={item}
+                />
+              );
+            }
+            return null;
+          })}
+
           {categories.map((item, key) => {
-            return (
-              <Tag
-                key={key}
-                active={item.check ? true : false}
-                onClick={(data) => setActiveCategory(data)}
-                data={item}
-              />
-            );
+            if (!sdgChecked) {
+              return (
+                <Tag
+                  key={key}
+                  active={item.check ? true : false}
+                  onClick={(data) => setActiveCategory(data)}
+                  data={item}
+                />
+              );
+            }
+            return null;
           })}
         </div>
       </div>
@@ -57,7 +99,7 @@ export default function InterestedTag({ setItem }) {
           className="btn btn-primary btn-lg w-full"
           onClick={() => saveCategories()}
         >
-          Ayo Mulai! 😊
+          Let's Start! 😊
         </button>
       </div>
     </div>

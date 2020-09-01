@@ -185,9 +185,6 @@ export default function index() {
                 }}
               ></div>
               <div className="pl-3 w-3/5">
-                <p className="text-xs text-gray-500 uppercase font-semibold">
-                  {item.category}
-                </p>
                 <h3 className="text-md font-semibold leading-tight mb-3">
                   {item.title}
                 </h3>

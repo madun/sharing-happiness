@@ -1,0 +1,19 @@
+[
+  { "id": 111, "title": "No Poverty" },
+  { "id": 112, "title": "Zero Hunger" },
+  { "id": 113, "title": "Good Health And Well-Being" },
+  { "id": 114, "title": "Quality Education" },
+  { "id": 115, "title": "Gender Equality" },
+  { "id": 116, "title": "Clean Water And Sanitation" },
+  { "id": 117, "title": "Affordable And Clean Energy" },
+  { "id": 118, "title": "Decent Work And Economic Growth" },
+  { "id": 119, "title": "Industry, Innovation And Infrastructure" },
+  { "id": 121, "title": "Reduced Inequalities" },
+  { "id": 122, "title": "Sustainable Cities And Communities" },
+  { "id": 123, "title": "Responsible Consumption And Production" },
+  { "id": 124, "title": "Climate Action" },
+  { "id": 125, "title": "Life Below Water" },
+  { "id": 126, "title": "Life On Land" },
+  { "id": 127, "title": "Peace, Justice And Strong Institutions" },
+  { "id": 128, "title": "Partnerships For The Goals" }
+]
