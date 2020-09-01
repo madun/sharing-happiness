@@ -14,3 +14,17 @@ body {
   /* width: 100% !important; */
   @apply rounded-lg w-full;
 }
+
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+.btn.btn-lg {
+  @apply text-lg py-4 px-8;
+}
+
+.btn-primary {
+  @apply bg-teal-400 text-white;
+}
+.btn-primary:hover {
+  @apply bg-teal-600;
+}

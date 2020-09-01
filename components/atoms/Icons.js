@@ -11,6 +11,7 @@ import {
   ThumbUp,
   ArrowBackIos,
   Share,
+  Check,
 } from "@material-ui/icons";
 
 function HomeIcon() {
@@ -43,6 +44,9 @@ function ArrowBackIcon(props) {
 function ShareIcon(props) {
   return <Share {...props} />;
 }
+function CheckIcon(props) {
+  return <Check {...props} />;
+}
 
 export {
   HomeIcon,
@@ -55,4 +59,5 @@ export {
   ThumbUpIcon,
   ArrowBackIcon,
   ShareIcon,
+  CheckIcon,
 };
