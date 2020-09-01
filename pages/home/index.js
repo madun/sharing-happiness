@@ -108,7 +108,7 @@ export default function index() {
           <div className="w-1/2 px-1">
             <a
               href="#"
-              className="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
+              className="flex items-end h-40 block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
               style={{
                 background:
                   "url(https://images.unsplash.com/photo-1593113598332-cd288d649433?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800)",
@@ -116,14 +116,13 @@ export default function index() {
                 backgroundSize: "cover",
               }}
             >
-              <div className="h-24"></div>
               <h3 className="text-lg font-bold text-white leading-tight">
                 DJ Dan Spins The Wheels
               </h3>
             </a>
             <a
               href="#"
-              className="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
+              className="flex items-end h-56 block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
               style={{
                 background:
                   "url(https://images.unsplash.com/photo-1593113630400-ea4288922497?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800)",
@@ -131,7 +130,6 @@ export default function index() {
                 backgroundSize: "cover",
               }}
             >
-              <div className="h-32"></div>
               <h3 className="text-lg font-bold text-white leading-tight">
                 Top Travels Destinations For 2020
               </h3>
@@ -140,7 +138,7 @@ export default function index() {
           <div className="w-1/2 px-1">
             <a
               href="#"
-              className="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
+              className="flex items-end h-56 block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
               style={{
                 background:
                   "url(https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800)",
@@ -148,14 +146,13 @@ export default function index() {
                 backgroundSize: "cover",
               }}
             >
-              <div className="h-32"></div>
               <h3 className="text-lg font-bold text-white leading-tight">
                 M&S Launches New Makeup Range!
               </h3>
             </a>
             <a
               href="#"
-              className="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
+              className="flex items-end h-40 block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
               style={{
                 background:
                   "url(https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800)",
@@ -163,7 +160,6 @@ export default function index() {
                 backgroundSize: "cover",
               }}
             >
-              <div className="h-24"></div>
               <h3 className="text-lg font-bold text-white leading-tight">
                 APT Set To Be A&nbsp;Ripper
               </h3>
