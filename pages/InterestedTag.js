@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import categoryList from "../category-list.json";
 import { CheckIcon } from "../components/atoms/Icons";
+import Tag from "../components/molecules/Tag";
 
 export default function InterestedTag({ setItem }) {
   const updatedCategory = categoryList.map((obj) => ({ ...obj, check: false }));
   const [categories, setCategory] = useState(updatedCategory);
-
-  const baseTag =
-    "relative rounded shadow px-4 py-2 text-sm cursor-pointer m-2 transform transition-all duration-300 hover:scale-95";
-  const activeTag = "text-white bg-red-500 scale-95";
-  const defaultTag = "text-gray-700 bg-gray-300 scale-100";
 
   function setActiveCategory(item) {
     const filtered = categories.map((category) =>
@@ -47,26 +43,12 @@ export default function InterestedTag({ setItem }) {
         <div className="flex w-full flex-wrap">
           {categories.map((item, key) => {
             return (
-              <div
+              <Tag
                 key={key}
-                className={
-                  item.check
-                    ? [baseTag, activeTag].join(" ")
-                    : [baseTag, defaultTag].join(" ")
-                }
-                onClick={() => setActiveCategory(item)}
-              >
-                <span>{item.title}</span>
-                {item.check && (
-                  <div className="absolute" style={{ top: -5, right: -10 }}>
-                    <div className="rounded-full bg-teal-500 w-6 h-6 text-center">
-                      <CheckIcon
-                        style={{ width: 16, height: 16, color: "white" }}
-                      />
-                    </div>
-                  </div>
-                )}
-              </div>
+                active={item.check ? true : false}
+                onClick={(data) => setActiveCategory(data)}
+                data={item}
+              />
             );
           })}
         </div>
