@@ -6,6 +6,7 @@ import BaseLayout from "../../components/layouts/BaseLayout";
 import { Card } from "../../components/molecules";
 import { useState } from "react";
 import Meta from "../../components/Meta";
+import { CheckIcon } from "../../components/atoms/Icons";
 moment.locale("id");
 
 export default function index() {
@@ -18,6 +19,8 @@ export default function index() {
       title: "Bangkitnya para pahlawan negeri",
       avatar: "https://randomuser.me/api/portraits/men/63.jpg",
       username: "Kevin Mitnich",
+      target: 50000000,
+      collected: 5000000,
     },
     {
       id: 35,
@@ -27,6 +30,8 @@ export default function index() {
       title: "Music Indonesia melegenda di luar Negeri",
       avatar: "https://randomuser.me/api/portraits/women/11.jpg",
       username: "MadunSki",
+      target: 120000000,
+      collected: 60000000,
     },
     {
       id: 36,
@@ -36,6 +41,8 @@ export default function index() {
       title: "Berita Dunia dalam amukan masa",
       avatar: "https://randomuser.me/api/portraits/women/74.jpg",
       username: "Gwen Station",
+      target: 700000000,
+      collected: 43000000,
     },
   ]);
 
@@ -174,7 +181,7 @@ export default function index() {
             <a
               href="#"
               key={item.id}
-              className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95 border-b last:border-b-0 last:pb-0 pb-4 first:pt-0 pt-4"
+              className="flex items-center w-full transform transition-all duration-300 scale-100 hover:scale-95 border-b last:border-b-0 last:pb-0 pb-4 first:pt-0 pt-4"
             >
               <div
                 className="block h-24 w-2/5 rounded overflow-hidden"
@@ -185,19 +192,42 @@ export default function index() {
                 }}
               ></div>
               <div className="pl-3 w-3/5">
-                <h3 className="text-md font-semibold leading-tight mb-3">
-                  {item.title}
-                </h3>
-                <div className="flex w-full items-center text-xs text-gray-500 font-medium">
+                <div className="h-9 overflow-hidden mb-1">
                   <div
-                    className="rounded-full w-5 h-5 mr-3"
+                    className="font-semibold leading-tight overflow-hidden text-sm"
                     style={{
-                      background: `url(${item.avatar})`,
-                      backgroundPosition: "center",
-                      backgroundSize: "cover",
+                      textOverflow: "ellipsis",
+                      wordWrap: "break-word",
+                      display: "-webkit-box",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 2,
+                      height: "inherit",
+                    }}
+                  >
+                    {item.title}
+                  </div>
+                </div>
+                <div className="flex w-full items-center text-xs text-gray-500 font-medium mb-1">
+                  <div className="max-w-xs truncate">{item.username}</div>
+                  <div className="flex rounded-full w-3 h-3 ml-2 bg-green-400 text-white items-center justify-center">
+                    <CheckIcon style={{ width: 12, height: 12 }} />
+                  </div>
+                </div>
+                <div className="h-1 bg-gray-300 rounded-full w-full mb-1">
+                  <div
+                    className="h-full bg-teal-400 rounded-full"
+                    style={{
+                      width: `${(item.collected / item.target) * 100}%`,
                     }}
                   ></div>
-                  <div>{item.username}</div>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <div>Terkumpul</div>
+                  <div>Sisa hari</div>
+                </div>
+                <div className="flex justify-between text-xs font-semibold">
+                  <div>Rp {item.collected}</div>
+                  <div>45</div>
                 </div>
               </div>
             </a>
